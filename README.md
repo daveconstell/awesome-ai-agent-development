@@ -22,37 +22,16 @@ A compact guide to core agent-building concepts.
 - Memory preserves context.
 - Tools perform real actions.
 
-## Minimal Example: Re-engagement Email Agent
-**Goal:** Send one email to customers inactive for 30+ days.
+## Development
+Development is about choosing the right level of automation and control for your team and use case.
 
-### Flow
-1. Trigger daily at 09:00.
-2. Query inactive customers.
-3. Skip customers already contacted recently.
-4. Generate personalized email content.
-5. Send email.
-6. Log result.
+### Code
+Best when you need custom logic, deep integrations, version control, testing, and scalable architecture.
 
-### Pseudocode
-```python
-def daily_trigger():
-    for customer in db.inactive_customers(days=30):
-        if memory.sent_recently(customer.id):
-            continue
-        body = model.generate(
-            f"Write a short re-engagement email for {customer.name}."
-        )
-        email_api.send(to=customer.email, body=body)
-        memory.log_sent(customer.id)
-```
+### Node-Code
+Best when you want fast workflow building using visual nodes and low-complexity automation without heavy engineering overhead.
 
-## Practical Rule of Thumb
-In most projects, start with:
-1. A strong prompt.
-2. The right tools.
-3. Basic memory and logging.
-
-Only fine-tune/train later if prompt + tooling + workflow design cannot meet quality needs.
-
+## Conclusion
+Start simple, iterate quickly, and increase complexity only when your product requirements demand it.
 
 ![Model Diagram](./model.png)
