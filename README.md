@@ -2,6 +2,8 @@
 
 A compact guide to core agent-building concepts.
 
+![Screenshot](./screenshot.png)
+
 ## Core Components
 - **Agent**: Orchestrates decisions and actions toward a goal.
 - **Model**: Reasoning engine that generates plans/content.
